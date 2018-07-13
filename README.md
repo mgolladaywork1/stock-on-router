@@ -15,7 +15,7 @@ First we need to understand a few basic key items:
 
 > import router and configuration in app.module
 
-> \<rounter-outlet> in the html
+> \<router-outlet> in the html
 
 > routerLink 
 
