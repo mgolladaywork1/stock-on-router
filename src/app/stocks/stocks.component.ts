@@ -6,9 +6,7 @@ import { switchMap } from 'rxjs/operators';
 import { Stock } from '../model/stock';
 import { StockService } from './stock.service';
 
-
 @Component({
-  selector: 'app-stocks',
   templateUrl: './stocks.component.html',
   styleUrls: ['./stocks.component.css']
 })
@@ -18,11 +16,17 @@ export class StocksComponent implements OnInit {
   private selectedId: number;
 
   constructor(
-    // private service: StockService,
+    private service: StockService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    this.stocks$ = this.route.paramMap.pipe(
+      switchMap((params: ParamMap) => {
+        this.selectedId = +params.get('id');
+        return this.service.getWatchStocks();
+      })
+    );
   }
 
 }

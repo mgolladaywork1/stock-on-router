@@ -1,3 +1,12 @@
 <h2>STOCKS</h2>
 <p>Here is the Stock List</p>
+<ul class="items">
+    <li *ngFor="let stock of stocks$ | async" [class.selected]="stock.id === selectedId">
+        <a [routerLink]="['/stock', stock.id]">
+            <span class="badge">{{stock.id}}</span>
+            <span class="badge">{{stock.name}}</span>
+            <span class="badge">{{stock.price |currency}}</span>
+        </a>
+    </li>
+</ul>
 <button routerLink="/sidekicks">Go to sidekicks</button>

@@ -36,7 +36,7 @@ Our project will have
 - We can add, update, or delete an item in Stock-list or in Stock-Center
 
 
-## The first section is almost like milestone 1 in Angular Doc.  I created a simple routing application with 2 routes, default redirect route, and a page-not-found 
+## The first session is almost like milestone 1 in Angular Doc.  I created a simple routing application with 2 routes, default redirect route, and a page-not-found 
 
 Let's start.
 
@@ -74,7 +74,7 @@ Let's start.
 
 ## This section is almost like milestone 2 in Angular Doc.  I created the AppRoutingModule for a more complex application ahead.
 
-In this section, I created the simple AppRoutingModule.  It took the router part in AppModule that was created in milestone 1; and after removing the router codes in AppModule, import AppRoutingModule to AppModule.  When running the application, features and output should still be similar as of milestone 1.
+In this session, I created the simple AppRoutingModule.  It took the router part in AppModule that was created in milestone 1; and after removing the router codes in AppModule, import AppRoutingModule to AppModule.  When running the application, features and output should still be similar as of milestone 1.
 
 ```
 import { RouterModule, Routes } from '@angular/router';
@@ -104,4 +104,9 @@ const appRoutes: Routes = [
 })
 export class AppRoutingModule { }
 ```
+Now, the 3rd session.  I applied the technique like milestone 3 in Angular Doc.  3 major tasks accomplished here:
+
+- Organize the app and rounters into feature areas.  Such as 'Stocks', 'Stock-Center'
+- Navigate imperatively from one component to another.  (We have been used declaratively).  
+- Pass required and optional information through route parameters.  
 

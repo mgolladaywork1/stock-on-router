@@ -1,0 +1,40 @@
+<div *ngIf="stock">
+    <h2>{{stock.name | uppercase}}Stock Details</h2>
+    <div>
+        <span>id: </span>{{stock.id}}</div>
+    <div>
+        <label>name:
+            <input [(ngModel)]="stock.name" placeholder="name" />
+        </label>
+    </div>
+</div>
+
+<h2>STOCKS</h2>
+<div *ngIf="stock$ | async as stock">
+    <h3>"{{ stock.name }}"</h3>
+    <div>
+        <label>Id: </label>{{ stock.id }}
+    </div>
+    <div>
+        <div>
+            <label>Symbol: </label>
+            <input [(ngModel)]="stock.symbol" placeholder="symbol" />
+        </div>
+        <div>
+            <label>Name: </label>
+            <input [(ngModel)]="stock.name" placeholder="name" />
+        </div>
+        <div>
+            <label>Description: </label>
+            <input [(ngModel)]="stock.description" placeholder="description" />
+        </div>
+        <div>
+            <label>Price: </label>
+            <input [(ngModel)]="stock.price" placeholder="price" />
+        </div>
+    </div>
+    <p>
+        <button (click)="gotoStocks(stock)">Back</button>
+    </p>
+</div>
+`
