@@ -4,13 +4,18 @@ import { Observable } from 'rxjs';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Stock } from '../model/stock';
 import { StockService } from './stock.service';
+import { slideInDownAnimation } from '../animations';
 import { PARAMETERS } from '@angular/core/src/util/decorators';
 
 @Component({
     selector: 'app-stock-detail',
-    templateUrl: './stock-detail.component.html'
+    templateUrl: './stock-detail.component.html',
+    animations: [slideInDownAnimation]
 })
 export class StockDetailComponent implements OnInit {
+    @HostBinding('@routeAnimation') routeAnimation = true;
+    @HostBinding('style.display') display = 'block';
+    @HostBinding('style.position') position = 'absolute';
 
     stock$: Observable<Stock>;
 
@@ -29,6 +34,6 @@ export class StockDetailComponent implements OnInit {
 
     gotoStocks(stock: Stock) {
         const stockId = stock ? stock.id : null;
-        this.router.navigate(['/stock', { id: stockId, foo: 'foo' }]);
+        this.router.navigate(['/stocklist', { id: stockId, foo: 'foo' }]);
     }
 }

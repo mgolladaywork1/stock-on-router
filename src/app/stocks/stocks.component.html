@@ -4,8 +4,7 @@
     <li *ngFor="let stock of stocks$ | async" [class.selected]="stock.id === selectedId">
         <a [routerLink]="['/stock', stock.id]">
             <span class="badge">{{stock.id}}</span>
-            <span class="badge">{{stock.name}}</span>
-            <span class="badge">{{stock.price |currency}}</span>
+            <span>{{stock.name}}</span>
         </a>
     </li>
 </ul>
