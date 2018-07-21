@@ -7,19 +7,18 @@ import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 import { StocksModule } from './stocks/stocks.module';
 import { PageNotFoundComponent } from './not-found.component';
-import { StocksComponent } from './stocks/stocks.component';
-import { StockCenterComponent } from './stock-center/stock-center.component';
+import { StockCenterModule } from './stock-center/stock-center.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent,
-    StockCenterComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     StocksModule,
+    StockCenterModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],

@@ -1,3 +1,10 @@
-<p>
-  stock-center works!
-</p>
+stock-center works!
+<ul class="items">
+  <li *ngFor="let pick of stockpick$ | async" [class.selected]="pick.id === selectedId">
+    <a>
+      <span class="badge">{{ pick.id }}</span>{{ pick.name }}
+    </a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>

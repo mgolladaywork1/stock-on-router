@@ -110,3 +110,31 @@ Now, the 3rd session.  I applied the technique like milestone 3 in Angular Doc. 
 - Navigate imperatively from one component to another.  (We have been used declaratively).  
 - Pass required and optional information through route parameters.  
 
+#  Apply Separation of Concerns principle
+
+Below is a set of rules from Angular Doc.  
+```
+- Each feature area resides in its own folder  
+- Each feature has its own Angular feature module  
+- Each area has its own area root component  
+- Each area root component has its own router outlet and chile route  
+- Each area route rarely (if ever) cross with
+routes of other features  
+```
+
+# Apply Guard to control user's navigation or authorization.
+
+```
+- CanActivate: to mediate navigation to a route
+- CanActivateChild: to mediate navigation to a child route
+- CanDeactivate: to mediate navigation away from the current route
+- Resolve: to perform route data retrieval before route activation
+- CanLoad: to mediate navigation to a feature module loaded asynchronously
+```
+```
+- CanDeactivate and CanActivateChild guards first, from the deepest child route to the top  
+- Then CanActivate guards from the top down to the deepest child route  
+- If the module is loaded asynchronously, the CanLoad guard is checked.
+- If any guard return false, pending guards are canceled, and the entire navigation is canceled.  
+```
+

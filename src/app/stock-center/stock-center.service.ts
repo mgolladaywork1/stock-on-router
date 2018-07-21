@@ -12,9 +12,12 @@ const PICKS: Pick[] = PICKLIST;
 export class StockCenterService {
     static nextStockCenterId = 200;
 
-    constructor(public id: number, public name: string) { }
+    constructor() { }
 
-    getPicklists() { return of(PICKLIST); }
+    getPicklists() {
+        console.log(`PICKS LENGTH: ${PICKS.length}`);
+        return of(PICKS);
+    }
 
     getPicklist(id: number | string) {
         return this.getPicklists().pipe(
